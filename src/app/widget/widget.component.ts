@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
       widget works!
     </p>
     Some input: <input type="text" />
+    <button (click)="onClick()">Click Me</button>
   `,
   styles: []
 })
@@ -17,5 +18,9 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit() {
     console.log("WidgetComponent ngOnInit");
+  }
+
+  onClick() {
+    console.log("WidgetComponent onClick");
   }
 }

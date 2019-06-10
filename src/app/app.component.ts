@@ -20,10 +20,13 @@ export class AppComponent implements OnInit {
   containerB: ViewContainerRef;
   @ViewChild("containerC", { read: ViewContainerRef, static: true })
   containerC: ViewContainerRef;
+  @ViewChild("containerO", { read: ViewContainerRef, static: true })
+  containerO: ViewContainerRef;
 
   myWidgetFactory;
   myWidget: ComponentRef<WidgetComponent>;
   currentContainer: ViewContainerRef;
+  showModal = false;
 
   constructor(private componentFactorResolver: ComponentFactoryResolver) {}
 
@@ -34,6 +37,7 @@ export class AppComponent implements OnInit {
   }
 
   addWidgetTo(container: string) {
+    this.showModal = false;
     switch (container) {
       case "A":
         this.addTo(this.containerA);
@@ -43,6 +47,10 @@ export class AppComponent implements OnInit {
         break;
       case "C":
         this.addTo(this.containerC);
+        break;
+      case "O":
+        this.addTo(this.containerO);
+        this.showModal = true;
         break;
     }
   }

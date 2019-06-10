@@ -4,6 +4,7 @@
   <button type="button" (click)="addWidgetTo('A')">A</button>
   <button type="button" (click)="addWidgetTo('B')">B</button>
   <button type="button" (click)="addWidgetTo('C')">C</button>
+  <button type="button" (click)="addWidgetTo('O')">Modal</button>
 </div>
 <div class="widget-container">
   <h1>Container A</h1>
@@ -16,4 +17,19 @@
 <div class="widget-container">
   <h1>Container C</h1>
   <div #containerC></div>
+</div>
+
+<!-- The Modal -->
+<div
+  id="myModal"
+  class="modal"
+  [ngClass]="showModal ? 'modal-show' : 'modal-hide'"
+>
+  <!-- Modal content -->
+  <div class="widget-container modal-content">
+    <h1>Modal Overylay Container</h1>
+    <div #containerO></div>
+    <br />
+    <button (click)="showModal = false">Close</button>
+  </div>
 </div>
